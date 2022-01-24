@@ -12,7 +12,9 @@ controllare che i numeri casuali siano diversi tra loro
 controllare che l'utente non inserisca 2 volte lo stesso numero
 */
 
+const display = document.getElementById('display');
 const randomNumbers = [];
+const askedNumbers = [];
 let time = 30 * 1000;
 let askNumber;
 
@@ -23,3 +25,13 @@ do {
     randomNumbers.push(getRandomNumbers(1, 100));
 }
 while (randomNumbers.length < 5 && !randomNumbers.includes(getRandomNumbers));
+
+alert(randomNumbers);
+
+console.log(randomNumbers);
+
+const myTimeout = setTimeout(() => {
+    
+    console.log(askedNumbers);
+}, 3000);
+
