@@ -11,3 +11,15 @@ BONUS:
 controllare che i numeri casuali siano diversi tra loro
 controllare che l'utente non inserisca 2 volte lo stesso numero
 */
+
+const randomNumbers = [];
+let time = 30 * 1000;
+let askNumber;
+
+const getRandomNumbers = (min, max) => Math.floor(Math.random() * (max - min) + min);
+console.log(getRandomNumbers(0, 100));
+
+do {
+    randomNumbers.push(getRandomNumbers(1, 100));
+}
+while (randomNumbers.length < 5 && !randomNumbers.includes(getRandomNumbers));
