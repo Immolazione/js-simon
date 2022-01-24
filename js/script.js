@@ -14,7 +14,7 @@ controllare che l'utente non inserisca 2 volte lo stesso numero
 
 const display = document.getElementById('display');
 const randomNumbers = [];
-const askedNumbers = [];
+let userChoices = [];
 let time = 30 * 1000;
 let askNumber;
 
@@ -31,7 +31,10 @@ alert(randomNumbers);
 console.log(randomNumbers);
 
 const myTimeout = setTimeout(() => {
-    
-    console.log(askedNumbers);
-}, 3000);
+    for (let i = 0; i < randomNumbers.length; i++) {
+        let userNumber = parseInt(prompt('Scrivi un numero').trim());
+        userChoices.push(userNumber);  
+    };
 
+    console.log(userChoices);
+}, 3000);
