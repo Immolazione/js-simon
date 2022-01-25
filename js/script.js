@@ -12,6 +12,10 @@ controllare che i numeri casuali siano diversi tra loro
 controllare che l'utente non inserisca 2 volte lo stesso numero
 */
 
+let min = 0;
+let max = 50;
+let totale = 5;
+
 // FUNZIONE RANDOMIZZANTE
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
@@ -28,8 +32,29 @@ const getUniqueRandomNumber = (min, max, totale) => {
 };
 
 // CREO ARRAY CON 5 NUMERI
-const numbers = getUniqueRandomNumber(1, 50, 5);
+const numbers = getUniqueRandomNumber(min, max, totale);
 console.log(numbers);
 
-alert(numbers);
+// ALERT CHE MOSTRA I NUMERI
+alert(`I tuoi numeri sono: ${numbers}`);
+
+const myTimeout = setTimeout(() => {
+    // ARRAY CON I NUMERI DELL'UTENTE
+    const userNums = [];
+
+    // ARRAY CON I NUMERI CORRETTI
+    const correctNums = [];
+
+    while (userNums.length < 5) {
+        let userGuess = parseInt(prompt(`Inserisci un numero da ${min} a ${max}`).trim());
+        // VALIDAZIONE
+
+        userNums.push(userGuess);
+        if (numbers.includes(userGuess)) correctNums.push(userGuess);
+    };
+    console.log(userNums);
+    console.log(correctNums);
+}, 2000);
+
+// ALERT PER IL RISULTATO
 
