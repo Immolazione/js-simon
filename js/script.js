@@ -47,13 +47,23 @@ const myTimeout = setTimeout(() => {
 
     while (userNums.length < 5) {
         let userGuess = parseInt(prompt(`Inserisci un numero da ${min} a ${max}`).trim());
-        // VALIDAZIONE
-
-        userNums.push(userGuess);
-        if (numbers.includes(userGuess)) correctNums.push(userGuess);
+        //! VALIDAZIONE
+        if (userNums.includes(userGuess)){
+            alert('Hai già scelto questo numero');
+        } else{
+            userNums.push(userGuess);
+            if (numbers.includes(userGuess)) correctNums.push(userGuess);
+        };
     };
     console.log(userNums);
     console.log(correctNums);
+
+    let message = `Non hai indovinato nessuno dei ${totale} numeri!`
+
+    if (correctNums.length) {
+        message = `Hai indovinato ${correctNums.length} numero/i: ${correctNums}`
+    };
+    alert(message);
 }, 2000);
 
 // ALERT PER IL RISULTATO
