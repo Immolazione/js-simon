@@ -51,13 +51,19 @@ const myTimeout = setTimeout(() => {
     const correctNums = [];
 
     while (userNums.length < 5) {
-        let userGuess = parseInt(prompt(`Inserisci un numero da ${min} a ${max}`).trim());
-        //! VALIDAZIONE
-        if (userNums.includes(userGuess)){
-            alert('Hai già scelto questo numero');
-        } else{
-            userNums.push(userGuess);
-            if (numbers.includes(userGuess)) correctNums.push(userGuess);
+        let userGuess;
+        while (!isValidNum(userGuess)) {
+
+            userGuess = parseInt(prompt(`Inserisci un numero da ${min} a ${max}`).trim());
+
+            //! VALIDAZIONE
+
+            if (userNums.includes(userGuess)){
+                alert('Hai già scelto questo numero');
+            } else {
+                userNums.push(userGuess);
+                if (numbers.includes(userGuess)) correctNums.push(userGuess);
+            };
         };
     };
     console.log(userNums);
