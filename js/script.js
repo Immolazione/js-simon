@@ -19,6 +19,11 @@ let totale = 5;
 // FUNZIONE RANDOMIZZANTE
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
+// FUNZIONE FLAG PER NUMERO
+const isValidNum = (number) => {
+    return (isNaN(number)) ? false : true;
+};
+
 // FUNZIONE CHE NON PUSHA SE GIA PRESENTE NELL'ARRAY
 const getUniqueRandomNumber = (min, max, totale) => {
     const numbers = [];
