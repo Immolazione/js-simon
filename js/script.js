@@ -31,3 +31,5 @@ const getUniqueRandomNumber = (min, max, totale) => {
 const numbers = getUniqueRandomNumber(1, 50, 5);
 console.log(numbers);
 
+alert(numbers);
+
