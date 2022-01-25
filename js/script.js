@@ -59,7 +59,7 @@ const myTimeout = setTimeout(() => {
             //! VALIDAZIONE
 
             if (userNums.includes(userGuess)){
-                alert('Hai già scelto questo numero');
+                alert('Il numero che hai scelto è già stato inserito o non è valido');
             } else {
                 userNums.push(userGuess);
                 if (numbers.includes(userGuess)) correctNums.push(userGuess);
