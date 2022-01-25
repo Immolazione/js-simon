@@ -12,3 +12,22 @@ controllare che i numeri casuali siano diversi tra loro
 controllare che l'utente non inserisca 2 volte lo stesso numero
 */
 
+// FUNZIONE RANDOMIZZANTE
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+// FUNZIONE CHE NON PUSHA SE GIA PRESENTE NELL'ARRAY
+const getUniqueRandomNumber = (min, max, totale) => {
+    const numbers = [];
+    while (numbers.length < totale) {
+        const randomNumber = getRandomNumber(min, max);
+        if (!numbers.includes(randomNumber)) {
+            numbers.push(randomNumber);
+        };
+    };
+    return numbers;
+};
+
+// CREO ARRAY CON 5 NUMERI
+const numbers = getUniqueRandomNumber(1, 50, 5);
+console.log(numbers);
+
